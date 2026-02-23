@@ -44,7 +44,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd mean-devops-assignment
+            cd Discover-Dollar-
 
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/backend_dollar:latest
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/frontend_dollar:latest
