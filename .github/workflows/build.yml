@@ -1,0 +1,43 @@
+name: Build Succeeds on PR
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      # ---------------- Backend Build ----------------
+      - name: Setup Node for Backend
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install Backend Dependencies
+        working-directory: ./backend
+        run: npm install
+
+      # Optional if backend has build step
+      - name: Build Backend (if applicable)
+        working-directory: ./backend
+        run: |
+          if [ -f package.json ] && grep -q "\"build\":" package.json; then
+            npm run build
+          else
+            echo "No backend build step found"
+          fi
+
+      # ---------------- Frontend Build ----------------
+      - name: Install Frontend Dependencies
+        working-directory: ./frontend
+        run: npm install
+
+      - name: Build Frontend
+        working-directory: ./frontend
+        run: npm run build

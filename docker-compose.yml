@@ -1,0 +1,54 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:6
+    container_name: mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - mean-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: mean-backend
+    restart: unless-stopped
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/meanapp
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    networks:
+      - mean-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: mean-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "8081:8081"
+    networks:
+      - mean-network
+
+volumes:
+  mongo-data:
+
+networks:
+  mean-network:
+    driver: bridge
