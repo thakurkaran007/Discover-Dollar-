@@ -111,7 +111,7 @@ sudo systemctl enable --now docker
 ### 2 — Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/crud-dd-task-mean-app.git
+git clone https://github.com/thakurkaran007/crud-dd-task-mean-app.git
 cd crud-dd-task-mean-app
 ```
 
