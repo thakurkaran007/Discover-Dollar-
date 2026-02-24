@@ -95,6 +95,7 @@ sudo docker compose pull
 sudo docker compose up -d
 ```
 
+
 ---
 
 ## Deploy on EC2 / Ubuntu VM
