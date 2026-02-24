@@ -1,5 +1,18 @@
 # 🚀 MEAN App — Containerized & CI/CD Deployment
 
+---
+
+## 🌐 Live Deployed Application
+
+### 🔗 **[http://54.226.221.90](http://54.226.221.90)**
+
+> ✅ Production Deployment on AWS EC2  
+> ✅ Nginx Reverse Proxy (Port 80)  
+> ✅ Dockerized (MongoDB · Express · Angular · Node)  
+> ✅ Automated CI/CD via GitHub Actions  
+
+---
+
 > **Discover-Dollar-** — A full-stack MEAN (MongoDB · Express · Angular · Node) application containerized with Docker Compose, published to Docker Hub, and deployed on an AWS EC2 Ubuntu VM via GitHub Actions CI/CD. Nginx serves as the reverse proxy on port 80.
 
 ---
