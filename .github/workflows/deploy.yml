@@ -13,7 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Login to DockerHub
       - name: Login to DockerHub
         uses: docker/login-action@v2
         with:
@@ -46,8 +45,6 @@ jobs:
           script: |
             cd Discover-Dollar-
 
-            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/backend_dollar:latest
-            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/frontend_dollar:latest
-
             sudo docker-compose down
+            sudo docker-compose pull
             sudo docker-compose up -d
