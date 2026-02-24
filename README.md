@@ -1,6 +1,6 @@
 # 🚀 MEAN App — Containerized & CI/CD Deployment
 
-> **crud-dd-task-mean-app** — A full-stack MEAN (MongoDB · Express · Angular · Node) application containerized with Docker Compose, published to Docker Hub, and deployed on an AWS EC2 Ubuntu VM via GitHub Actions CI/CD. Nginx serves as the reverse proxy on port 80.
+> **Discover-Dollar-** — A full-stack MEAN (MongoDB · Express · Angular · Node) application containerized with Docker Compose, published to Docker Hub, and deployed on an AWS EC2 Ubuntu VM via GitHub Actions CI/CD. Nginx serves as the reverse proxy on port 80.
 
 ---
 
@@ -104,15 +104,15 @@ sudo docker compose up -d
 
 ```bash
 sudo apt update
-sudo apt install -y docker.io docker-compose
-sudo systemctl enable --now docker
+sudo apt install nginx
+sudo apt install docker-compose
 ```
 
 ### 2 — Clone the repository
 
 ```bash
-git clone https://github.com/thakurkaran007/crud-dd-task-mean-app.git
-cd crud-dd-task-mean-app
+git clone https://github.com/thakurkaran007/Discover-Dollar-.git
+cd Discover-Dollar-
 ```
 
 ### 3 — Start the stack
