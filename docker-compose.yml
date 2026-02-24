@@ -23,6 +23,7 @@ services:
     restart: unless-stopped
     environment:
       - MONGO_URI=mongodb://mongodb:27017/meanapp
+      - FRONTEND_URL=http://54.226.221.90
     depends_on:
       mongodb:
         condition: service_healthy
